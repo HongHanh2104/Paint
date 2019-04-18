@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73DDEE18-A31E-4A89-820A-16C330EE3AFC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Paint</RootNamespace>
+    <AssemblyName>Paint</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Counter.cs" />
+    <Compile Include="Shape\Text.cs" />
+    <Compile Include="Shape\Zigzag.cs" />
+    <Compile Include="TextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextForm.Designer.cs">
+      <DependentUpon>TextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shape\Bezier.cs" />
+    <Compile Include="Shape\Ellipse.cs" />
+    <Compile Include="Layer.cs" />
+    <Compile Include="Shape\Hyperbola.cs" />
+    <Compile Include="Shape\Line.cs" />
+    <Compile Include="Shape\Parabola.cs" />
+    <Compile Include="Shape\Polygon.cs" />
+    <Compile Include="Shape\Rectangle.cs" />
+    <Compile Include="Shape\Shape.cs" />
+    <Compile Include="Tool\ShapeTool\BezierTool.cs" />
+    <Compile Include="Tool\SelectionTool.cs" />
+    <Compile Include="Tool\ShapeTool\CircleTool.cs" />
+    <Compile Include="ColorManager.cs" />
+    <Compile Include="Tool\ShapeTool\LineTool.cs" />
+    <Compile Include="Paint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paint.Designer.cs">
+      <DependentUpon>Paint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForm.Designer.cs">
+      <DependentUpon>NewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaintSpace.cs" />
+    <Compile Include="Tool\ShapeTool\ZigzagTool.cs" />
+    <Compile Include="Tool\TransformationTool\ScaleTool.cs" />
+    <Compile Include="Tool\TransformationTool\RotateTool.cs" />
+    <Compile Include="Tool\TransformationTool\MoveTool.cs" />
+    <Compile Include="Tool\PaintTool.cs" />
+    <Compile Include="Tool\ShapeTool\HyperbolaTool.cs" />
+    <Compile Include="Tool\ShapeTool\ParabolaTool.cs" />
+    <Compile Include="Tool\ShapeTool\PolygonTool.cs" />
+    <Compile Include="Tool\ShapeTool\RectangleTool.cs" />
+    <Compile Include="SetPencilWidth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetPencilWidth.Designer.cs">
+      <DependentUpon>SetPencilWidth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\TextTool.cs" />
+    <Compile Include="Tool\ClickAndDragTool.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tool\Tool.cs" />
+    <Compile Include="Tool\ToolGenerator.cs" />
+    <Compile Include="Transformation\Rotation.cs" />
+    <Compile Include="Transformation\Translation.cs" />
+    <Compile Include="Transformation\Scale.cs" />
+    <Compile Include="Transformation\Transformation.cs" />
+    <EmbeddedResource Include="Paint.resx">
+      <DependentUpon>Paint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForm.resx">
+      <DependentUpon>NewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SetPencilWidth.resx">
+      <DependentUpon>SetPencilWidth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextForm.resx">
+      <DependentUpon>TextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ellipse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fillcolor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hyperbola.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parabola1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pensize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\polygon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zigzag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transparency10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bezier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borderShape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\solidShape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
